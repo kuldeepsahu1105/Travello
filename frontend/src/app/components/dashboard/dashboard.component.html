@@ -1,0 +1,103 @@
+<div class="dashboard">
+  <header class="page-header">
+    <div>
+      <h2>Dashboard</h2>
+      <p class="subtitle">Welcome back! Here's your travel overview.</p>
+    </div>
+    <a routerLink="/trips/new" class="btn btn-primary">+ Plan New Trip</a>
+  </header>
+
+  @if (loading) {
+    <div class="loading">Loading dashboard...</div>
+  } @else if (stats) {
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon trips">🗺</div>
+        <div class="stat-info">
+          <span class="stat-value">{{ stats.total_trips }}</span>
+          <span class="stat-label">Total Trips</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon active">🌍</div>
+        <div class="stat-info">
+          <span class="stat-value">{{ stats.active_trips }}</span>
+          <span class="stat-label">Active Trips</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon budget">💰</div>
+        <div class="stat-info">
+          <span class="stat-value">{{ stats.total_budget | currency }}</span>
+          <span class="stat-label">Total Budget</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon expenses">📊</div>
+        <div class="stat-info">
+          <span class="stat-value">{{ stats.total_expenses | currency }}</span>
+          <span class="stat-label">Total Expenses</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="dashboard-grid">
+      <section class="card">
+        <h3>Recent Trips</h3>
+        @if (recentTrips.length === 0) {
+          <p class="empty">No trips yet. Start planning your first adventure!</p>
+        } @else {
+          <div class="trip-list">
+            @for (trip of recentTrips; track trip.id) {
+              <a [routerLink]="['/trips', trip.id]" class="trip-item">
+                <div class="trip-cover" [style.background-image]="'url(' + trip.cover_image + ')'"></div>
+                <div class="trip-info">
+                  <h4>{{ trip.title }}</h4>
+                  <p>{{ trip.destination }}</p>
+                  <span class="status-badge" [class]="getStatusClass(trip.status)">{{ trip.status }}</span>
+                </div>
+              </a>
+            }
+          </div>
+        }
+        <a routerLink="/trips" class="view-all">View all trips →</a>
+      </section>
+
+      <section class="card">
+        <h3>Top Destinations</h3>
+        @if (stats.destinations.length === 0) {
+          <p class="empty">No destinations yet.</p>
+        } @else {
+          <div class="destinations">
+            @for (dest of stats.destinations; track dest.destination) {
+              <div class="dest-item">
+                <span class="dest-name">{{ dest.destination }}</span>
+                <span class="dest-count">{{ dest.count }} trip{{ dest.count > 1 ? 's' : '' }}</span>
+              </div>
+            }
+          </div>
+        }
+      </section>
+
+      <section class="card quick-stats">
+        <h3>Quick Stats</h3>
+        <div class="quick-stat-row">
+          <span>Planned</span>
+          <strong>{{ stats.planned_trips }}</strong>
+        </div>
+        <div class="quick-stat-row">
+          <span>Completed</span>
+          <strong>{{ stats.completed_trips }}</strong>
+        </div>
+        <div class="quick-stat-row">
+          <span>Total Bookings</span>
+          <strong>{{ stats.total_bookings }}</strong>
+        </div>
+        <div class="quick-stat-row">
+          <span>Budget Remaining</span>
+          <strong>{{ stats.total_budget - stats.total_expenses | currency }}</strong>
+        </div>
+      </section>
+    </div>
+  }
+</div>

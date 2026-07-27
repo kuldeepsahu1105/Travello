@@ -1,0 +1,55 @@
+<div class="trip-list-page">
+  <header class="page-header">
+    <div>
+      <h2>My Trips</h2>
+      <p class="subtitle">Manage all your travel plans in one place.</p>
+    </div>
+    <a routerLink="/trips/new" class="btn btn-primary">+ New Trip</a>
+  </header>
+
+  <div class="filters">
+    @for (status of ['all', 'planned', 'active', 'completed', 'cancelled']; track status) {
+      <button
+        class="filter-btn"
+        [class.active]="filterStatus === status"
+        (click)="filterStatus = status">
+        {{ status | titlecase }}
+      </button>
+    }
+  </div>
+
+  @if (loading) {
+    <div class="loading">Loading trips...</div>
+  } @else if (filteredTrips.length === 0) {
+    <div class="empty-state">
+      <span class="empty-icon">🧳</span>
+      <h3>No trips found</h3>
+      <p>Start planning your next adventure!</p>
+      <a routerLink="/trips/new" class="btn btn-primary">Create Your First Trip</a>
+    </div>
+  } @else {
+    <div class="trips-grid">
+      @for (trip of filteredTrips; track trip.id) {
+        <a [routerLink]="['/trips', trip.id]" class="trip-card">
+          <div class="card-cover" [style.background-image]="'url(' + trip.cover_image + ')'">
+            <span class="status-badge" [class]="getStatusClass(trip.status)">{{ trip.status }}</span>
+          </div>
+          <div class="card-body">
+            <h3>{{ trip.title }}</h3>
+            <p class="destination">📍 {{ trip.destination }}</p>
+            <div class="card-meta">
+              <span>{{ trip.start_date | date:'MMM d' }} – {{ trip.end_date | date:'MMM d, y' }}</span>
+            </div>
+            <div class="card-footer">
+              <div class="budget-info">
+                <span class="label">Budget</span>
+                <span class="value">{{ trip.budget | currency }}</span>
+              </div>
+              <button class="btn-delete" (click)="deleteTrip(trip.id!, $event)" title="Delete trip">🗑</button>
+            </div>
+          </div>
+        </a>
+      }
+    </div>
+  }
+</div>

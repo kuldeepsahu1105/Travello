@@ -1,0 +1,218 @@
+.dashboard {
+  max-width: 1200px;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+
+  h2 {
+    margin: 0 0 0.25rem;
+    font-size: 1.75rem;
+    color: #1a2b3c;
+  }
+
+  .subtitle {
+    margin: 0;
+    color: #6b7c93;
+  }
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.stat-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+
+  &.trips { background: #e3f2fd; }
+  &.active { background: #e8f5e9; }
+  &.budget { background: #fff3e0; }
+  &.expenses { background: #fce4ec; }
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a2b3c;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: #6b7c93;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+
+  .card:first-child {
+    grid-row: span 2;
+  }
+}
+
+.card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+  h3 {
+    margin: 0 0 1.25rem;
+    font-size: 1.1rem;
+    color: #1a2b3c;
+  }
+}
+
+.trip-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.trip-item {
+  display: flex;
+  gap: 1rem;
+  padding: 0.75rem;
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.2s;
+
+  &:hover {
+    background: #f0f4f8;
+  }
+}
+
+.trip-cover {
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  background-color: #e0e7ef;
+  flex-shrink: 0;
+}
+
+.trip-info {
+  h4 {
+    margin: 0 0 0.25rem;
+    font-size: 0.95rem;
+    color: #1a2b3c;
+  }
+
+  p {
+    margin: 0 0 0.5rem;
+    font-size: 0.85rem;
+    color: #6b7c93;
+  }
+}
+
+.destinations {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.dest-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem;
+  background: #f8fafc;
+  border-radius: 8px;
+
+  .dest-name {
+    font-weight: 500;
+    color: #1a2b3c;
+  }
+
+  .dest-count {
+    color: #6b7c93;
+    font-size: 0.85rem;
+  }
+}
+
+.quick-stat-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #eef2f6;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  span {
+    color: #6b7c93;
+  }
+
+  strong {
+    color: #1a2b3c;
+  }
+}
+
+.view-all {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #1b6ca8;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.empty {
+  color: #6b7c93;
+  font-size: 0.9rem;
+}
+
+.loading {
+  text-align: center;
+  padding: 3rem;
+  color: #6b7c93;
+}
+
+@media (max-width: 900px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+
+    .card:first-child {
+      grid-row: auto;
+    }
+  }
+}
