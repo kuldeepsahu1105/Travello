@@ -1,4 +1,4 @@
-# Travelo
+# Travello
 
 A full-stack travel management system built with **Django REST Framework** (backend) and **Angular** (frontend).
 
@@ -64,9 +64,9 @@ The app will be available at `http://localhost:4200/`.
 ## Project Structure
 
 ```
-travelo/
+travello/
 ├── backend/
-│   ├── travelo/          # Django project settings
+│   ├── travello/         # Django project settings
 │   ├── travel/           # Travel app (models, views, API)
 │   └── manage.py
 └── frontend/
