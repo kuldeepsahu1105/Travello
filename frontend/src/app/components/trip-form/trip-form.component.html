@@ -1,0 +1,64 @@
+<div class="trip-form-page">
+  <header class="page-header">
+    <div>
+      <h2>{{ isEdit ? 'Edit Trip' : 'Plan a New Trip' }}</h2>
+      <p class="subtitle">{{ isEdit ? 'Update your trip details.' : 'Fill in the details to start planning your adventure.' }}</p>
+    </div>
+  </header>
+
+  <form class="form-card" (ngSubmit)="onSubmit()">
+    <div class="form-grid">
+      <div class="form-group full">
+        <label for="title">Trip Title</label>
+        <input id="title" [(ngModel)]="trip.title" name="title" placeholder="e.g. Summer in Italy" required>
+      </div>
+
+      <div class="form-group">
+        <label for="destination">Destination</label>
+        <input id="destination" [(ngModel)]="trip.destination" name="destination" placeholder="e.g. Rome, Italy" required>
+      </div>
+
+      <div class="form-group">
+        <label for="status">Status</label>
+        <select id="status" [(ngModel)]="trip.status" name="status">
+          <option value="planned">Planned</option>
+          <option value="active">Active</option>
+          <option value="completed">Completed</option>
+          <option value="cancelled">Cancelled</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="start_date">Start Date</label>
+        <input id="start_date" [(ngModel)]="trip.start_date" name="start_date" type="date" required>
+      </div>
+
+      <div class="form-group">
+        <label for="end_date">End Date</label>
+        <input id="end_date" [(ngModel)]="trip.end_date" name="end_date" type="date" required>
+      </div>
+
+      <div class="form-group">
+        <label for="budget">Budget ($)</label>
+        <input id="budget" [(ngModel)]="trip.budget" name="budget" type="number" min="0" step="0.01" required>
+      </div>
+
+      <div class="form-group">
+        <label for="cover_image">Cover Image URL</label>
+        <input id="cover_image" [(ngModel)]="trip.cover_image" name="cover_image" placeholder="https://...">
+      </div>
+
+      <div class="form-group full">
+        <label for="description">Description</label>
+        <textarea id="description" [(ngModel)]="trip.description" name="description" rows="4" placeholder="Describe your trip plans..."></textarea>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <a routerLink="/trips" class="btn btn-secondary">Cancel</a>
+      <button type="submit" class="btn btn-primary" [disabled]="saving">
+        {{ saving ? 'Saving...' : (isEdit ? 'Update Trip' : 'Create Trip') }}
+      </button>
+    </div>
+  </form>
+</div>

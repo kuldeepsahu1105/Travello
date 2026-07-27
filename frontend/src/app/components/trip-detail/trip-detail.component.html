@@ -1,0 +1,192 @@
+@if (loading) {
+  <div class="loading">Loading trip details...</div>
+} @else if (trip) {
+  <div class="trip-detail">
+    <div class="hero" [style.background-image]="'linear-gradient(rgba(15,76,117,0.7), rgba(15,76,117,0.85)), url(' + trip.cover_image + ')'">
+      <a routerLink="/trips" class="back-link">← Back to Trips</a>
+      <div class="hero-content">
+        <span class="status-badge" [class]="getStatusClass(trip.status)">{{ trip.status }}</span>
+        <h1>{{ trip.title }}</h1>
+        <p class="destination">📍 {{ trip.destination }}</p>
+        <p class="dates">{{ trip.start_date | date:'longDate' }} – {{ trip.end_date | date:'longDate' }}</p>
+      </div>
+      <div class="hero-actions">
+        <a [routerLink]="['/trips', trip.id, 'edit']" class="btn btn-outline-light">Edit Trip</a>
+        <button class="btn btn-danger" (click)="deleteTrip()">Delete</button>
+      </div>
+    </div>
+
+    <div class="budget-bar-section">
+      <div class="budget-info">
+        <span>Spent: <strong>{{ trip.total_expenses | currency }}</strong></span>
+        <span>Budget: <strong>{{ trip.budget | currency }}</strong></span>
+        <span>Remaining: <strong [class.over-budget]="(trip.remaining_budget || 0) < 0">{{ trip.remaining_budget | currency }}</strong></span>
+      </div>
+      <div class="budget-bar">
+        <div class="budget-fill" [style.width.%]="getBudgetPercent()" [class.over]="getBudgetPercent() > 90"></div>
+      </div>
+    </div>
+
+    <div class="tabs">
+      @for (tab of ['overview', 'bookings', 'expenses', 'itinerary']; track tab) {
+        <button class="tab-btn" [class.active]="activeTab === tab" (click)="activeTab = $any(tab)">
+          {{ tab | titlecase }}
+        </button>
+      }
+    </div>
+
+    <div class="tab-content">
+      @if (activeTab === 'overview') {
+        <div class="overview">
+          <p class="description">{{ trip.description || 'No description provided.' }}</p>
+          <div class="overview-stats">
+            <div class="overview-stat">
+              <span class="num">{{ trip.bookings?.length || 0 }}</span>
+              <span class="lbl">Bookings</span>
+            </div>
+            <div class="overview-stat">
+              <span class="num">{{ trip.expenses?.length || 0 }}</span>
+              <span class="lbl">Expenses</span>
+            </div>
+            <div class="overview-stat">
+              <span class="num">{{ trip.itinerary?.length || 0 }}</span>
+              <span class="lbl">Itinerary Items</span>
+            </div>
+          </div>
+        </div>
+      }
+
+      @if (activeTab === 'bookings') {
+        <div class="section">
+          <div class="section-header">
+            <h3>Bookings</h3>
+            <button class="btn btn-primary btn-sm" (click)="showBookingForm = !showBookingForm">
+              {{ showBookingForm ? 'Cancel' : '+ Add Booking' }}
+            </button>
+          </div>
+          @if (showBookingForm) {
+            <form class="inline-form" (ngSubmit)="addBooking()">
+              <input [(ngModel)]="newBooking.title" name="title" placeholder="Title" required>
+              <select [(ngModel)]="newBooking.booking_type" name="type" required>
+                <option value="flight">Flight</option>
+                <option value="hotel">Hotel</option>
+                <option value="car">Car Rental</option>
+                <option value="activity">Activity</option>
+                <option value="other">Other</option>
+              </select>
+              <input [(ngModel)]="newBooking.provider" name="provider" placeholder="Provider">
+              <input [(ngModel)]="newBooking.amount" name="amount" type="number" placeholder="Amount" required>
+              <input [(ngModel)]="newBooking.booking_date" name="date" type="date" required>
+              <button type="submit" class="btn btn-primary btn-sm">Save</button>
+            </form>
+          }
+          @if (!trip.bookings?.length) {
+            <p class="empty">No bookings yet.</p>
+          } @else {
+            <div class="item-list">
+              @for (b of trip.bookings; track b.id) {
+                <div class="item-card">
+                  <div class="item-icon">{{ b.booking_type === 'flight' ? '✈' : b.booking_type === 'hotel' ? '🏨' : '📋' }}</div>
+                  <div class="item-info">
+                    <h4>{{ b.title }}</h4>
+                    <p>{{ b.provider }} · {{ b.booking_date | date:'mediumDate' }}</p>
+                  </div>
+                  <div class="item-amount">{{ b.amount | currency }}</div>
+                  <span class="status-badge" [class]="getStatusClass(b.status)">{{ b.status }}</span>
+                </div>
+              }
+            </div>
+          }
+        </div>
+      }
+
+      @if (activeTab === 'expenses') {
+        <div class="section">
+          <div class="section-header">
+            <h3>Expenses</h3>
+            <button class="btn btn-primary btn-sm" (click)="showExpenseForm = !showExpenseForm">
+              {{ showExpenseForm ? 'Cancel' : '+ Add Expense' }}
+            </button>
+          </div>
+          @if (showExpenseForm) {
+            <form class="inline-form" (ngSubmit)="addExpense()">
+              <input [(ngModel)]="newExpense.title" name="title" placeholder="Title" required>
+              <select [(ngModel)]="newExpense.category" name="category" required>
+                <option value="transport">Transport</option>
+                <option value="accommodation">Accommodation</option>
+                <option value="food">Food & Dining</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="shopping">Shopping</option>
+                <option value="other">Other</option>
+              </select>
+              <input [(ngModel)]="newExpense.amount" name="amount" type="number" placeholder="Amount" required>
+              <input [(ngModel)]="newExpense.date" name="date" type="date" required>
+              <button type="submit" class="btn btn-primary btn-sm">Save</button>
+            </form>
+          }
+          @if (!trip.expenses?.length) {
+            <p class="empty">No expenses recorded.</p>
+          } @else {
+            <div class="item-list">
+              @for (e of trip.expenses; track e.id) {
+                <div class="item-card">
+                  <div class="item-icon">💳</div>
+                  <div class="item-info">
+                    <h4>{{ e.title }}</h4>
+                    <p>{{ e.category | titlecase }} · {{ e.date | date:'mediumDate' }}</p>
+                  </div>
+                  <div class="item-amount expense">{{ e.amount | currency }}</div>
+                </div>
+              }
+            </div>
+          }
+        </div>
+      }
+
+      @if (activeTab === 'itinerary') {
+        <div class="section">
+          <div class="section-header">
+            <h3>Itinerary</h3>
+            <button class="btn btn-primary btn-sm" (click)="showItineraryForm = !showItineraryForm">
+              {{ showItineraryForm ? 'Cancel' : '+ Add Item' }}
+            </button>
+          </div>
+          @if (showItineraryForm) {
+            <form class="inline-form" (ngSubmit)="addItineraryItem()">
+              <input [(ngModel)]="newItinerary.day" name="day" type="number" placeholder="Day" required>
+              <input [(ngModel)]="newItinerary.title" name="title" placeholder="Activity" required>
+              <input [(ngModel)]="newItinerary.time" name="time" type="time">
+              <input [(ngModel)]="newItinerary.location" name="location" placeholder="Location">
+              <button type="submit" class="btn btn-primary btn-sm">Save</button>
+            </form>
+          }
+          @if (!trip.itinerary?.length) {
+            <p class="empty">No itinerary items yet.</p>
+          } @else {
+            <div class="itinerary-timeline">
+              @for (item of trip.itinerary; track item.id) {
+                <div class="timeline-item">
+                  <div class="timeline-marker">
+                    <span class="day">Day {{ item.day }}</span>
+                  </div>
+                  <div class="timeline-content">
+                    <h4>{{ item.title }}</h4>
+                    @if (item.time) {
+                      <span class="time">🕐 {{ item.time }}</span>
+                    }
+                    @if (item.location) {
+                      <span class="location">📍 {{ item.location }}</span>
+                    }
+                    @if (item.description) {
+                      <p>{{ item.description }}</p>
+                    }
+                  </div>
+                </div>
+              }
+            </div>
+          }
+        </div>
+      }
+    </div>
+  </div>
+}

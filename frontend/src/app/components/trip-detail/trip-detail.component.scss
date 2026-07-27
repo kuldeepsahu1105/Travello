@@ -1,0 +1,307 @@
+.trip-detail {
+  max-width: 1000px;
+  margin: -2rem;
+}
+
+.hero {
+  padding: 2rem;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.back-link {
+  position: absolute;
+  top: 1.5rem;
+  left: 2rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-size: 0.9rem;
+
+  &:hover {
+    color: #fff;
+  }
+}
+
+.hero-content {
+  h1 {
+    margin: 0.75rem 0 0.5rem;
+    font-size: 2rem;
+  }
+
+  .destination {
+    margin: 0 0 0.25rem;
+    opacity: 0.9;
+  }
+
+  .dates {
+    margin: 0;
+    opacity: 0.8;
+    font-size: 0.9rem;
+  }
+}
+
+.hero-actions {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.budget-bar-section {
+  background: #fff;
+  padding: 1.25rem 2rem;
+  border-bottom: 1px solid #eef2f6;
+}
+
+.budget-info {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  color: #6b7c93;
+  flex-wrap: wrap;
+
+  strong {
+    color: #1a2b3c;
+  }
+
+  .over-budget {
+    color: #e53935;
+  }
+}
+
+.budget-bar {
+  height: 8px;
+  background: #eef2f6;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.budget-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #1b6ca8, #4fc3f7);
+  border-radius: 4px;
+  transition: width 0.5s;
+
+  &.over {
+    background: linear-gradient(90deg, #e53935, #ff7043);
+  }
+}
+
+.tabs {
+  display: flex;
+  gap: 0;
+  background: #fff;
+  padding: 0 2rem;
+  border-bottom: 1px solid #eef2f6;
+}
+
+.tab-btn {
+  padding: 1rem 1.5rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #6b7c93;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+
+  &:hover {
+    color: #1b6ca8;
+  }
+
+  &.active {
+    color: #1b6ca8;
+    border-bottom-color: #1b6ca8;
+  }
+}
+
+.tab-content {
+  background: #fff;
+  padding: 2rem;
+  min-height: 300px;
+}
+
+.overview {
+  .description {
+    color: #4a5568;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+}
+
+.overview-stats {
+  display: flex;
+  gap: 2rem;
+}
+
+.overview-stat {
+  text-align: center;
+
+  .num {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1b6ca8;
+  }
+
+  .lbl {
+    font-size: 0.85rem;
+    color: #6b7c93;
+  }
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+
+  h3 {
+    margin: 0;
+    color: #1a2b3c;
+  }
+}
+
+.inline-form {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: 10px;
+
+  input, select {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #dde3ea;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    flex: 1;
+    min-width: 120px;
+  }
+}
+
+.item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.item-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: 10px;
+}
+
+.item-icon {
+  font-size: 1.5rem;
+}
+
+.item-info {
+  flex: 1;
+
+  h4 {
+    margin: 0 0 0.25rem;
+    font-size: 0.95rem;
+    color: #1a2b3c;
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #6b7c93;
+  }
+}
+
+.item-amount {
+  font-weight: 600;
+  color: #1a2b3c;
+
+  &.expense {
+    color: #e53935;
+  }
+}
+
+.itinerary-timeline {
+  position: relative;
+  padding-left: 2rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0.5rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #dde3ea;
+  }
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -1.65rem;
+  top: 0;
+
+  .day {
+    background: #1b6ca8;
+    color: #fff;
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+}
+
+.timeline-content {
+  h4 {
+    margin: 0 0 0.5rem;
+    color: #1a2b3c;
+  }
+
+  .time, .location {
+    display: inline-block;
+    margin-right: 1rem;
+    font-size: 0.85rem;
+    color: #6b7c93;
+  }
+
+  p {
+    margin: 0.5rem 0 0;
+    color: #4a5568;
+    font-size: 0.9rem;
+  }
+}
+
+.empty {
+  color: #6b7c93;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .trip-detail {
+    margin: -1rem;
+  }
+
+  .hero-actions {
+    position: static;
+    margin-top: 1rem;
+  }
+}
