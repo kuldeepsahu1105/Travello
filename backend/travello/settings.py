@@ -2,7 +2,7 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-travelo-dev-key-change-in-production'
+SECRET_KEY = 'django-insecure-travello-dev-key-change-in-production'
 
 DEBUG = True
 
@@ -31,7 +31,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'travelo.urls'
+ROOT_URLCONF = 'travello.urls'
 
 TEMPLATES = [
     {
@@ -48,7 +48,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'travelo.wsgi.application'
+WSGI_APPLICATION = 'travello.wsgi.application'
 
 DATABASES = {
     'default': {
