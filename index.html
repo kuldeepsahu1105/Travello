@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kuldeep Sahu — Partner Solutions Engineer at Cloudera. DevOps, Cloud, Kubernetes, Terraform, and Big Data.">
+  <title>Kuldeep Sahu | Partner Solutions Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bg-gradient"></div>
+  <div class="bg-grid"></div>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">KS</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#highlights">Highlights</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="pulse"></span>
+          Available for collaboration
+        </div>
+        <div class="hero-grid">
+          <div class="hero-text">
+            <p class="hero-greeting">Hello, I'm</p>
+            <h1>Kuldeep <span class="gradient-text">Sahu</span></h1>
+            <p class="hero-role">
+              <span id="typedText"></span><span class="cursor">|</span>
+            </p>
+            <p class="hero-desc">
+              Partner Solutions Engineer at <strong>Cloudera</strong>, building automation for
+              hybrid data platforms — from Terraform &amp; Ansible to Kubernetes, OpenShift, and Apache Iceberg.
+            </p>
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary">View My Work</a>
+              <a href="https://www.linkedin.com/in/kuldeep-sahu-0511" target="_blank" rel="noopener" class="btn btn-secondary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 114.126 0 2.063 2.063 0 01-2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+              </a>
+              <a href="https://github.com/kuldeepsahu1105" target="_blank" rel="noopener" class="btn btn-ghost">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                GitHub
+              </a>
+            </div>
+            <div class="hero-stats">
+              <div class="stat">
+                <span class="stat-num">6+</span>
+                <span class="stat-label">Years Experience</span>
+              </div>
+              <div class="stat">
+                <span class="stat-num">24</span>
+                <span class="stat-label">GitHub Repos</span>
+              </div>
+              <div class="stat">
+                <span class="stat-num">3</span>
+                <span class="stat-label">Cloud Platforms</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="profile-ring">
+              <img src="profile.jpeg" alt="Kuldeep Sahu" class="profile-img">
+            </div>
+            <div class="floating-card card-1">
+              <span class="card-icon">☁️</span>
+              <span>CDP on OpenShift</span>
+            </div>
+            <div class="floating-card card-2">
+              <span class="card-icon">⚙️</span>
+              <span>Terraform + Ansible</span>
+            </div>
+            <div class="floating-card card-3">
+              <span class="card-icon">📊</span>
+              <span>Apache Iceberg</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#about" class="scroll-indicator" aria-label="Scroll down">
+        <span></span>
+      </a>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">About Me</span>
+          <h2>Engineering data platforms<br>that scale with confidence</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-card glass">
+            <p>
+              I'm a <strong>Partner Solutions Engineer</strong> at Cloudera based in
+              <strong>Indore, India</strong>, where I help partners and customers deploy, automate,
+              and optimize Cloudera Data Platform across public cloud and on-premises environments.
+            </p>
+            <p>
+              Previously a <strong>Senior DevOps Engineer at Impetus</strong>, I bring deep hands-on
+              experience in CI/CD pipelines, infrastructure-as-code, container orchestration, and
+              big data technologies — from Hadoop and Spark to modern open lakehouse architectures.
+            </p>
+            <p>
+              I love turning complex deployment challenges into repeatable automation — whether that's
+              spinning up multi-node CDP clusters with Terraform, enabling partners through hands-on
+              workshops, or publishing technical guides on enterprise Kubernetes platforms.
+            </p>
+          </div>
+          <div class="about-details">
+            <div class="detail-item glass">
+              <span class="detail-label">Location</span>
+              <span class="detail-value">Indore, Madhya Pradesh, India</span>
+            </div>
+            <div class="detail-item glass">
+              <span class="detail-label">Company</span>
+              <span class="detail-value">Cloudera Inc.</span>
+            </div>
+            <div class="detail-item glass">
+              <span class="detail-label">Education</span>
+              <span class="detail-value">B.E. Computer Science, SVCE Indore</span>
+            </div>
+            <div class="detail-item glass">
+              <span class="detail-label">Email</span>
+              <a href="mailto:ksahu@cloudera.com" class="detail-value link">ksahu@cloudera.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Experience</span>
+          <h2>Where I've built &amp; shipped</h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content glass">
+              <div class="timeline-header">
+                <div>
+                  <h3>Partner Solutions Engineer</h3>
+                  <p class="company">Cloudera Inc.</p>
+                </div>
+                <span class="timeline-date">Feb 2024 — Present</span>
+              </div>
+              <ul>
+                <li>Automate CDP Public Cloud &amp; on-prem deployments using Docker, Ansible, Terraform, Python, and Jenkins</li>
+                <li>Deploy and operate CDP on Red Hat OpenShift and Rancher (RKE) Kubernetes platforms</li>
+                <li>Deliver partner enablement workshops on Open Data Lakehouse with Apache Iceberg</li>
+                <li>Author technical blogs on CDP-on-OpenShift architecture and deployment patterns</li>
+                <li>Integrate HashiCorp Vault, Sonatype Nexus, and enterprise security tooling</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content glass">
+              <div class="timeline-header">
+                <div>
+                  <h3>Senior DevOps Engineer</h3>
+                  <p class="company">Impetus Technologies</p>
+                </div>
+                <span class="timeline-date">Jul 2023 — Feb 2024</span>
+              </div>
+              <ul>
+                <li>Automated cloud infrastructure on AWS and on-premises datacenters</li>
+                <li>Built CI/CD pipelines with Jenkins, Ansible, Terraform, and containerized workloads</li>
+                <li>Implemented infrastructure-as-code practices across hybrid environments</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content glass">
+              <div class="timeline-header">
+                <div>
+                  <h3>Software / DevOps Engineer</h3>
+                  <p class="company">Earlier Roles</p>
+                </div>
+                <span class="timeline-date">2018 — 2023</span>
+              </div>
+              <ul>
+                <li>Full-stack development with Java, Spring Boot, Python (Django/Flask), and Angular</li>
+                <li>DevOps automation, AWS cloud solutions, and big data with Hadoop, Hive &amp; Spark</li>
+                <li>6+ years building scalable web applications and deployment pipelines</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Skills</span>
+          <h2>Tools &amp; technologies I work with</h2>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-category glass">
+            <h3>Cloud &amp; Platform</h3>
+            <div class="skill-tags">
+              <span>AWS</span><span>Azure</span><span>GCP</span><span>OpenShift</span>
+              <span>Kubernetes</span><span>Rancher</span><span>Docker</span>
+            </div>
+          </div>
+          <div class="skill-category glass">
+            <h3>IaC &amp; Automation</h3>
+            <div class="skill-tags">
+              <span>Terraform</span><span>Ansible</span><span>Shell</span><span>Python</span>
+              <span>Jenkins</span><span>GitHub Actions</span><span>GitLab CI/CD</span>
+            </div>
+          </div>
+          <div class="skill-category glass">
+            <h3>Big Data &amp; Analytics</h3>
+            <div class="skill-tags">
+              <span>Cloudera CDP</span><span>Apache Hadoop</span><span>Spark</span>
+              <span>Hive</span><span>Airflow</span><span>Apache Iceberg</span>
+            </div>
+          </div>
+          <div class="skill-category glass">
+            <h3>Development</h3>
+            <div class="skill-tags">
+              <span>Java</span><span>Spring Boot</span><span>Python</span><span>JavaScript</span>
+              <span>Angular</span><span>REST APIs</span><span>SQL</span>
+            </div>
+          </div>
+          <div class="skill-category glass">
+            <h3>DevOps &amp; Monitoring</h3>
+            <div class="skill-tags">
+              <span>CI/CD</span><span>Prometheus</span><span>Grafana</span>
+              <span>HashiCorp Vault</span><span>Nexus</span><span>Linux</span>
+            </div>
+          </div>
+          <div class="skill-category glass">
+            <h3>Methodologies</h3>
+            <div class="skill-tags">
+              <span>GitOps</span><span>Agile</span><span>MVC</span><span>Microservices</span>
+              <span>Partner Enablement</span><span>Technical Writing</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Projects</span>
+          <h2>Featured open-source work</h2>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card glass">
+            <div class="project-top">
+              <svg class="project-folder" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
+              <div class="project-links">
+                <a href="https://github.com/kuldeepsahu1105/cdp-onprem-automation" target="_blank" rel="noopener" aria-label="GitHub">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3>CDP On-Prem Automation</h3>
+            <p>Terraform and Ansible automation to spin up multi-node Cloudera Private Cloud (On-Prem) clusters with repeatable, production-ready workflows.</p>
+            <div class="project-tech">
+              <span>HCL</span><span>Ansible</span><span>Terraform</span>
+            </div>
+          </article>
+
+          <article class="project-card glass">
+            <div class="project-top">
+              <svg class="project-folder" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
+              <div class="project-links">
+                <a href="https://github.com/kuldeepsahu1105/terraform-cldr-csk-prereqs-deployer" target="_blank" rel="noopener" aria-label="GitHub">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3>CDP CSK Prerequisites Deployer</h3>
+            <p>Terraform modules to provision prerequisites for Cloudera Anywhere Cloud (CSK) installation on enterprise Kubernetes environments.</p>
+            <div class="project-tech">
+              <span>Terraform</span><span>HCL</span><span>AWS</span>
+            </div>
+          </article>
+
+          <article class="project-card glass">
+            <div class="project-top">
+              <svg class="project-folder" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
+              <div class="project-links">
+                <a href="https://github.com/kuldeepsahu1105/airflow-dags-cde" target="_blank" rel="noopener" aria-label="GitHub">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3>Airflow DAGs for CDE</h3>
+            <p>Apache Airflow DAGs designed for Cloudera Data Engineering workflows — orchestrating data pipelines in the cloud.</p>
+            <div class="project-tech">
+              <span>Python</span><span>Airflow</span><span>CDE</span>
+            </div>
+          </article>
+
+          <article class="project-card glass">
+            <div class="project-top">
+              <svg class="project-folder" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
+              <div class="project-links">
+                <a href="https://github.com/kuldeepsahu1105/utility-scripts" target="_blank" rel="noopener" aria-label="GitHub">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3>Utility Scripts</h3>
+            <p>Collection of shell and automation scripts for day-to-day infrastructure operations, cluster management, and DevOps tasks.</p>
+            <div class="project-tech">
+              <span>Shell</span><span>Bash</span><span>Automation</span>
+            </div>
+          </article>
+
+          <article class="project-card glass">
+            <div class="project-top">
+              <svg class="project-folder" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
+              <div class="project-links">
+                <a href="https://github.com/kuldeepsahu1105/DummyDataGenerator" target="_blank" rel="noopener" aria-label="GitHub">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3>Dummy Data Generator</h3>
+            <p>Python utility to generate realistic dummy datasets for testing data pipelines, demos, and development environments.</p>
+            <div class="project-tech">
+              <span>Python</span><span>Data</span>
+            </div>
+          </article>
+
+          <article class="project-card glass">
+            <div class="project-top">
+              <svg class="project-folder" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
+              <div class="project-links">
+                <a href="https://github.com/kuldeepsahu1105?tab=repositories" target="_blank" rel="noopener" aria-label="GitHub">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3>View All Repositories</h3>
+            <p>Explore 24+ public repositories spanning cloud automation, big data, DevOps tooling, and full-stack development.</p>
+            <div class="project-tech">
+              <span>GitHub</span><span>Open Source</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="highlights" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Highlights</span>
+          <h2>Recent activity &amp; contributions</h2>
+        </div>
+        <div class="highlights-grid">
+          <div class="highlight-card glass">
+            <div class="highlight-icon">📝</div>
+            <h3>Technical Blog Author</h3>
+            <p>Published "Running Cloudera Data Platform on Red Hat OpenShift" — covering architecture, deployment patterns, and hands-on implementation insights.</p>
+            <a href="https://www.linkedin.com/in/kuldeep-sahu-0511" target="_blank" rel="noopener" class="highlight-link">Read on LinkedIn →</a>
+          </div>
+          <div class="highlight-card glass">
+            <div class="highlight-icon">🎓</div>
+            <h3>Partner Enablement</h3>
+            <p>Led hands-on workshops on Cloudera's Open Data Lakehouse with Apache Iceberg at APAC Partner Day events and global offsites.</p>
+            <a href="https://www.linkedin.com/in/kuldeep-sahu-0511" target="_blank" rel="noopener" class="highlight-link">View on LinkedIn →</a>
+          </div>
+          <div class="highlight-card glass">
+            <div class="highlight-icon">🏗️</div>
+            <h3>CDP On-Prem Setup Guide</h3>
+            <p>Created comprehensive installation guides and presented best practices for Cloudera Private Cloud on-premise deployments to global SE teams.</p>
+            <a href="https://github.com/kuldeepsahu1105/cdp-onprem-automation" target="_blank" rel="noopener" class="highlight-link">View on GitHub →</a>
+          </div>
+          <div class="highlight-card glass">
+            <div class="highlight-icon">🌏</div>
+            <h3>APAC SE Offsite — Kuala Lumpur</h3>
+            <p>Presented cloud deployment automations, partner enablement strategies, and technical deep-dives at Cloudera's APAC Solutions Engineering offsite.</p>
+            <a href="https://www.linkedin.com/in/kuldeep-sahu-0511" target="_blank" rel="noopener" class="highlight-link">View on LinkedIn →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section section-alt">
+      <div class="container">
+        <div class="contact-wrapper glass">
+          <div class="section-header center">
+            <span class="section-tag">Contact</span>
+            <h2>Let's connect</h2>
+            <p class="contact-subtitle">Open to collaborations, technical discussions, and partner enablement opportunities.</p>
+          </div>
+          <div class="contact-links">
+            <a href="https://www.linkedin.com/in/kuldeep-sahu-0511" target="_blank" rel="noopener" class="contact-card">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 114.126 0 2.063 2.063 0 01-2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              <span>LinkedIn</span>
+              <small>kuldeep-sahu-0511</small>
+            </a>
+            <a href="https://github.com/kuldeepsahu1105" target="_blank" rel="noopener" class="contact-card">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              <span>GitHub</span>
+              <small>kuldeepsahu1105</small>
+            </a>
+            <a href="mailto:ksahu@cloudera.com" class="contact-card">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>Email</span>
+              <small>ksahu@cloudera.com</small>
+            </a>
+            <a href="https://hub.docker.com/u/kuldeepsahu1105" target="_blank" rel="noopener" class="contact-card">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119v2.258zm-2.954 0h2.12a.186.186 0 00.185-.185V9.006a.186.186 0 00-.185-.186h-2.12v2.258zm-2.93 0h2.12a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186H8.1v2.258zm-2.964 0h2.119a.186.186 0 00.185-.185V9.006a.186.186 0 00-.185-.186H5.136v2.258zm11.786 2.964H5.136a.186.186 0 00-.186.185v1.852c0 .102.083.185.186.185h11.786a.186.186 0 00.186-.185v-1.852a.186.186 0 00-.186-.185zM4.951 7.82h14.098c.102 0 .185-.083.185-.185V5.783a.186.186 0 00-.185-.186H4.951a.186.186 0 00-.185.186v1.852c0 .102.083.185.185.185zm15.454 4.258H4.951a.186.186 0 00-.185.186v1.852c0 .102.083.185.185.185h15.454a.186.186 0 00.186-.185v-1.852a.186.186 0 00-.186-.186z"/></svg>
+              <span>Docker Hub</span>
+              <small>kuldeepsahu1105</small>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>Designed &amp; built by <strong>Kuldeep Sahu</strong></p>
+      <p class="footer-meta">© 2026 · Indore, India</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
